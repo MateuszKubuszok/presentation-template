@@ -5,12 +5,15 @@ based on dark.css by Ivan Sagalaev
 
 */
 
+@import(../font/fira-code/fira_code.css);
+
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
   background: #3f3f3f;
   color: #dcdcdc;
+  font-family: Fira Code !important;
 }
 
 .hljs-keyword,

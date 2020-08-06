@@ -2,6 +2,7 @@
 
 == Slide One
 
+[%step]
 * Foo
 * Bar
 * World
@@ -21,7 +22,7 @@ Actually things aren't that bad
 --
 val test = task
   .map(identity)
-  .flatMap(someFunction)
+  .flatMap(a => Something(b))
   .runSyncUnsafe
   // result
 --

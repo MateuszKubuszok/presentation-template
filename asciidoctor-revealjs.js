@@ -8,6 +8,7 @@ ascidoctorRevealjs.register()
 var attributes = {
   'revealjsdir': '.',
   'revealjs_history': true,
+  'revealjs_fragmentInURL': true,
   'stem': 'latexmath',
   'source-highlighter': 'highlightjs',
   'highlightjsdir': './js',
