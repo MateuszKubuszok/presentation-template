@@ -1,38 +1,32 @@
 {
-  "name": "reveal.js",
-  "version": "3.7.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
+  "name": "Presentation template",
+  "version": "1.0.0",
+  "description": "Presentation template",
+  "homepage": "https://kubuszok.com",
   "main": "js/reveal.js",
   "scripts": {
-    "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt",
     "prebuild": "./asciidoctor-revealjs.js"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Mateusz Kubuszok",
+    "email": "mateusz.kubuszok@gmail.com",
+    "web": "https://kubuszok.com"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/hakimel/reveal.js.git"
   },
-  "engines": {
-    "node": ">=4.0.0"
-  },
   "devDependencies": {
-    "asciidoctor-reveal.js": "2.0.0",
+    "@asciidoctor/core": "2.2.0",
+    "@asciidoctor/reveal.js": "4.0.1",
     "express": "^4.16.2",
     "grunt": "^1.0.4",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-qunit": "^2.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-retire": "^1.0.7",
