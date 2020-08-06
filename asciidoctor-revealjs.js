@@ -9,7 +9,10 @@ var attributes = {
   'revealjsdir': '.',
   'revealjs_history': true,
   'stem': 'latexmath',
-  'source-highlighter': 'highlightjs'
+  'source-highlighter': 'highlightjs',
+  'highlightjsdir': './js',
+  'revealjs_theme': 'black',
+  'highlightjs-theme': './lib/css/zenburn.css'
 }
 var options = {safe: 'safe', backend: 'revealjs', attributes: attributes}
 asciidoctor.convertFile('index.adoc', options)

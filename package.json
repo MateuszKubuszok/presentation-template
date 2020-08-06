@@ -1,5 +1,5 @@
 {
-  "name": "Presentation template",
+  "name": "presentation",
   "version": "1.0.0",
   "description": "Presentation template",
   "homepage": "https://kubuszok.com",
@@ -16,18 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/MateuszKubuszok/presentation-template.git"
   },
   "devDependencies": {
     "@asciidoctor/core": "2.2.0",
     "@asciidoctor/reveal.js": "4.0.1",
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "grunt": "^1.0.4",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-cssmin": "^2.2.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-retire": "^1.0.7",
     "grunt-run": "0.8.1",

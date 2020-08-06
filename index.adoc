@@ -14,3 +14,14 @@ Hello World - Good Bye Cruel World
 --
 Actually things aren't that bad
 --
+
+== Source code
+
+[source, scala]
+--
+val test = task
+  .map(identity)
+  .flatMap(someFunction)
+  .runSyncUnsafe
+  // result
+--
