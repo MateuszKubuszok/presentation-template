@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Presentation template",
   "homepage": "https://kubuszok.com",
-  "main": "js/reveal.js",
   "scripts": {
     "start": "grunt serve",
     "build": "grunt",
