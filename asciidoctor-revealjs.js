@@ -6,14 +6,14 @@ ascidoctorRevealjs.register()
 
 // Convert the document 'index.adoc' using the reveal.js converter
 var attributes = {
-  'revealjsdir': '.',
+  'revealjsdir': './reveal.js',
   'revealjs_history': true,
   'revealjs_fragmentInURL': true,
   'stem': 'latexmath',
   'source-highlighter': 'highlightjs',
-  'highlightjsdir': './js',
+  'highlightjsdir': './highlightjs',
   'revealjs_theme': 'black',
-  'highlightjs-theme': './lib/css/zenburn.css'
+  'highlightjs-theme': './highlightjs/css/zenburn.css'
 }
 var options = {safe: 'safe', backend: 'revealjs', attributes: attributes}
 asciidoctor.convertFile('index.adoc', options)

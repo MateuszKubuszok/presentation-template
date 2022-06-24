@@ -9,7 +9,7 @@ yarn start // for development
 
 ## Development
 
-ASCIIDoctor syntax for Reveal.js - https://asciidoctor.org/docs/asciidoctor-revealjs/#syntax-examples
+ASCIIDoctor syntax for Reveal.js - https://docs.asciidoctor.org/reveal.js-converter/latest/converter/features/
 
 ## Tips
 

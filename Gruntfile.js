@@ -5,6 +5,8 @@ module.exports = function(grunt) {
 
   if (!Array.isArray(root)) root = [root];
 
+  const sass = require('sass');
+
   grunt.loadNpmTasks('grunt-run');
 
   // Project configuration
@@ -17,7 +19,7 @@ module.exports = function(grunt) {
         ' * https://kubuszok.com\n' +
         ' * MIT licensed\n' +
         ' *\n' +
-        ' * Copyright (C) 2020 Mateusz Kubuszok, https://kubuszok.com\n' +
+        ' * Copyright (C) 2022 Mateusz Kubuszok, https://kubuszok.com\n' +
         ' */'
     },
     
@@ -30,31 +32,25 @@ module.exports = function(grunt) {
 
     sass: {
       core: {
-        src: 'css/reveal.scss',
-        dest: 'css/reveal.css'
+        options: {
+          implementation: sass,
+          sourceMap: true
+        },
+        files: {
+          'reveal.js/dist/layout.css': 'css/layout.scss',
+          'reveal.js/dist/reveal.css': 'css/reveal.scss',
+          'reveal.js/dist/print/paper.css': 'css/print/paper.scss',
+          'reveal.js/dist/print/pdf.css': 'css/print/pdf.scss',
+        }
       },
       themes: {
-        expand: true,
-        cwd: 'css/theme/source',
-        src: ['*.sass', '*.scss'],
-        dest: 'css/theme',
-        ext: '.css'
-      }
-    },
-
-    autoprefixer: {
-      core: {
-        src: 'css/reveal.css'
-      }
-    },
-
-    cssmin: {
-      options: {
-        compatibility: 'ie9'
-      },
-      compress: {
-        src: 'css/reveal.css',
-        dest: 'css/reveal.min.css'
+        options: {
+          implementation: sass,
+          sourceMap: true
+        },
+        files: {
+          'reveal.js/dist/theme/black.css': 'css/theme/source/black.scss'
+        }
       }
     },
 
@@ -70,29 +66,14 @@ module.exports = function(grunt) {
       }
     },
 
-    zip: {
-      bundle: {
-        src: [
-          'index.html',
-          'css/**',
-          'js/**',
-          'lib/**',
-          'images/**',
-          'plugin/**',
-          '**.md'
-        ],
-        dest: 'reveal-js-presentation.zip'
-      }
-    },
-
     watch: {
       asciidoc: {
         files: [ 'index.adoc' ],
         tasks: 'prebuild'
       },
-      js: {
-        files: [ 'Gruntfile.js', 'js/reveal.js' ],
-        tasks: 'js'
+      css: {
+        files: [ 'css/layout.scss','css/reveal.scss' ],
+        tasks: 'css-core'
       },
       theme: {
         files: [
@@ -103,10 +84,6 @@ module.exports = function(grunt) {
         ],
         tasks: 'css-themes'
       },
-      css: {
-        files: [ 'css/reveal.scss' ],
-        tasks: 'css-core'
-      },
       html: {
         files: root.map(path => path + '/*.html')
       },
@@ -116,38 +93,26 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       }
-    },
-
-    retire: {
-      js: [ 'js/reveal.js', 'lib/js/*.js', 'plugin/**/*.js' ],
-      node: [ '.' ]
     }
 
   });
 
   // Dependencies
   grunt.loadNpmTasks( 'grunt-contrib-connect' );
-  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
-  grunt.loadNpmTasks( 'grunt-autoprefixer' );
-  grunt.loadNpmTasks( 'grunt-retire' );
   grunt.loadNpmTasks( 'grunt-sass' );
-  grunt.loadNpmTasks( 'grunt-zip' );
   
   // Default task
-  grunt.registerTask( 'default', [ 'css', 'js' ] );
-
-  // JS task
-  grunt.registerTask( 'js', [] );
+  grunt.registerTask( 'default', [ 'css' ] );
 
   // Theme CSS
   grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
 
   // Core framework CSS
-  grunt.registerTask( 'css-core', [ 'sass:core', 'autoprefixer', 'cssmin' ] );
+  grunt.registerTask( 'css-core', [ 'sass:core' ] );
 
   // All CSS
-  grunt.registerTask( 'css', [ 'sass', 'autoprefixer', 'cssmin' ] );
+  grunt.registerTask( 'css', [ 'sass' ] );
 
   // Package presentation to archive
   grunt.registerTask( 'package', [ 'default', 'zip' ] );
