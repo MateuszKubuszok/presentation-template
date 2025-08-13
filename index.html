@@ -413,7 +413,7 @@ ul.byline {
 ul.byline li + li {
   margin-top: 0.25em;
 }
-</style><script>window.MathJax = {"tex":{"inlineMath":[["\\(", "\\)"]], "displayMath":[["\\[", "\\]"]], "processEscapes":false, "tags":"none"}, "options":{"ignoreHtmlClass":"nostem|nolatexmath"}, "asciimath":{"delimiters":[["\\$", "\\$"]]}, "loader":{"load":["input/asciimath", "output/chtml", "ui/menu"]}};</script><script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Title Slide</h1></section><section id="_slide_one"><h2>Slide One</h2><div class="slide-content"><div class="ulist"><ul><li class="fragment"><p>Foo</p></li><li class="fragment"><p>Bar</p></li><li class="fragment"><p>World</p></li></ul></div></div></section>
+</style><script>window.MathJax = {"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"processEscapes":false,"tags":"none"},"options":{"ignoreHtmlClass":"nostem|nolatexmath"},"asciimath":{"delimiters":[["\\$","\\$"]]},"loader":{"load":["input/asciimath","output/chtml","ui/menu"]}};</script><script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Title Slide</h1></section><section id="_slide_one"><h2>Slide One</h2><div class="slide-content"><div class="ulist"><ul><li class="fragment"><p>Foo</p></li><li class="fragment"><p>Bar</p></li><li class="fragment"><p>World</p></li></ul></div></div></section>
 <section id="_slide_two"><h2>Slide Two</h2><div class="slide-content"><div class="paragraph"><p>Hello World - Good Bye Cruel World</p></div>
 <aside class="notes"><div class="paragraph"><p>Actually things aren&#8217;t that bad</p></div></aside></div></section>
 <section id="_source_code"><h2>Source code</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-scala hljs" data-noescape="true" data-lang="scala">val test = task
@@ -795,12 +795,18 @@ Reveal.addEventListener('resize', function () {
         var highlightSteps = RevealHighlight.deserializeHighlightSteps( block.getAttribute( 'data-line-numbers' ) );
         if( highlightSteps.length > 1 ) {
 
+          // When rendered with asciidoc, data-fragment index if it exists lies on the listing block element, so we have to lookup
           // If the original code block has a fragment-index,
           // each clone should follow in an incremental sequence
-          var fragmentIndex = parseInt( block.getAttribute( 'data-fragment-index' ), 10 );
+          var preCodeWrapper = block.parentElement;
+          var divContent = preCodeWrapper.parentElement;
+          var listingBlock = divContent.parentElement;
+          var fragmentIndex = parseInt( listingBlock.getAttribute( 'data-fragment-index' ), 10 );
 
           if( typeof fragmentIndex !== 'number' || isNaN( fragmentIndex ) ) {
             fragmentIndex = null;
+          } else {
+            fragmentIndex += 1;
           }
 
           // Generate fragments for all steps except the original block

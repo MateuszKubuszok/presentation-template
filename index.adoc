@@ -1,3 +1,9 @@
+// 35 minutes
+:revealjs_totalTime: 1800
+:revealjs_theme: serif
+:revealjs_help: true
+
+
 = Title Slide
 
 == Slide One
