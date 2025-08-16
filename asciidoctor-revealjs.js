@@ -12,7 +12,6 @@ var attributes = {
   'stem': 'latexmath',
   'source-highlighter': 'highlightjs',
   'highlightjsdir': './highlightjs',
-  'revealjs_theme': 'black',
   'highlightjs-theme': './highlightjs/css/zenburn.css'
 }
 var options = {safe: 'safe', backend: 'revealjs', attributes: attributes}

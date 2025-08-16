@@ -534,9 +534,9 @@ html.reveal-full-page {
     left: 0;
   }
   .reveal .controls[data-controls-layout=edges] .navigate-left,
-.reveal .controls[data-controls-layout=edges] .navigate-right,
-.reveal .controls[data-controls-layout=edges] .navigate-up,
-.reveal .controls[data-controls-layout=edges] .navigate-down {
+  .reveal .controls[data-controls-layout=edges] .navigate-right,
+  .reveal .controls[data-controls-layout=edges] .navigate-up,
+  .reveal .controls[data-controls-layout=edges] .navigate-down {
     bottom: auto;
     right: auto;
   }
@@ -1979,13 +1979,13 @@ html.print-pdf .aria-status {
     float: none !important;
   }
   html:not(.print-pdf) .nestedarrow,
-html:not(.print-pdf) .controls,
-html:not(.print-pdf) .fork-reveal,
-html:not(.print-pdf) .share-reveal,
-html:not(.print-pdf) .state-background,
-html:not(.print-pdf) .reveal .progress,
-html:not(.print-pdf) .reveal .backgrounds,
-html:not(.print-pdf) .reveal .slide-number {
+  html:not(.print-pdf) .controls,
+  html:not(.print-pdf) .fork-reveal,
+  html:not(.print-pdf) .share-reveal,
+  html:not(.print-pdf) .state-background,
+  html:not(.print-pdf) .reveal .progress,
+  html:not(.print-pdf) .reveal .backgrounds,
+  html:not(.print-pdf) .reveal .slide-number {
     display: none !important;
   }
   html:not(.print-pdf) body, html:not(.print-pdf) p, html:not(.print-pdf) td, html:not(.print-pdf) li {
@@ -2020,7 +2020,7 @@ html:not(.print-pdf) .reveal .slide-number {
     font-style: italic;
   }
   html:not(.print-pdf) a:link,
-html:not(.print-pdf) a:visited {
+  html:not(.print-pdf) a:visited {
     color: #000 !important;
     font-weight: bold;
     text-decoration: underline;
@@ -2036,7 +2036,7 @@ html:not(.print-pdf) a:visited {
     text-align: left !important;
   }
   html:not(.print-pdf) .reveal pre,
-html:not(.print-pdf) .reveal table {
+  html:not(.print-pdf) .reveal table {
     margin-left: 0;
     margin-right: 0;
   }
@@ -2118,5 +2118,3 @@ html:not(.print-pdf) .reveal table {
     color: inherit !important;
   }
 }
-
-/*# sourceMappingURL=reveal.css.map */

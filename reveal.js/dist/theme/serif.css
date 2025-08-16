@@ -1,9 +1,9 @@
 /**
- * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is brown.
  *
- * By Hakim El Hattab, http://hakim.se
+ * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
  */
-@import url(./fonts/source-sans-pro/source-sans-pro.css);
 .small {
   font-size: 30px;
 }
@@ -12,42 +12,46 @@
   font-size: 1.6em !important;
 }
 
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222;
+.reveal a {
+  line-height: 1.3em;
+}
+
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #191919;
-  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-main-font-size: 42px;
-  --r-main-color: #fff;
+  --r-background-color: #F0F1EB;
+  --r-main-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #fff;
+  --r-heading-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
+  --r-heading-color: #383D3D;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: uppercase;
+  --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
-  --r-heading-font-weight: 600;
+  --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
-  --r-heading1-size: 2.5em;
-  --r-heading2-size: 1.6em;
-  --r-heading3-size: 1.3em;
+  --r-heading1-size: 3.77em;
+  --r-heading2-size: 2.11em;
+  --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #42affa;
-  --r-link-color-dark: rgb(6.1726804124, 140.7371134021, 233.3273195876);
-  --r-link-color-hover: rgb(140.5283505155, 206.5463917526, 251.9716494845);
-  --r-selection-background-color: rgb(190.2139175258, 227.5773195876, 253.2860824742);
+  --r-link-color: #51483D;
+  --r-link-color-dark: rgb(37.3626760563, 33.2112676056, 28.1373239437);
+  --r-link-color-hover: rgb(139.1830985915, 123.7183098592, 104.8169014085);
+  --r-selection-background-color: #26351C;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #191919;
+  background: #F0F1EB;
   background-color: var(--r-background-color);
 }
 
